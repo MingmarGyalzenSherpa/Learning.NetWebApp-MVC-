@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using mingmar4thsem.Models;
 
 namespace mingmar4thsem.Controllers
 {
     public class PersonController : Controller
     {
+        Entities db = new Entities();
         // GET: Person
         public ActionResult inputPerson()
         {
-            return View();
+            List<person> all_data = db.people.ToList();
+            return View(all_data);
         }
     }
 }

@@ -77,3 +77,7 @@ D:\mingmar4thsem\mingmar4thsem\mingmar4thsem\obj\Debug\mingmar4thsem.csproj.Core
 D:\mingmar4thsem\mingmar4thsem\mingmar4thsem\obj\Debug\mingmar4thsem.csproj.CopyComplete
 D:\mingmar4thsem\mingmar4thsem\mingmar4thsem\obj\Debug\mingmar4thsem.dll
 D:\mingmar4thsem\mingmar4thsem\mingmar4thsem\obj\Debug\mingmar4thsem.pdb
+D:\mingmar4thsem\mingmar4thsem\mingmar4thsem\bin\EntityFramework.dll
+D:\mingmar4thsem\mingmar4thsem\mingmar4thsem\bin\EntityFramework.SqlServer.dll
+D:\mingmar4thsem\mingmar4thsem\mingmar4thsem\bin\EntityFramework.xml
+D:\mingmar4thsem\mingmar4thsem\mingmar4thsem\bin\EntityFramework.SqlServer.xml

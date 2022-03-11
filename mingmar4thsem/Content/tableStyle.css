@@ -1,0 +1,15 @@
+﻿body {
+    
+}
+td{
+    padding:20px;
+}
+th{
+    padding:15px;
+}
+.containerInfo{
+    margin-top:10px;
+    display:flex;
+    justify-content:space-evenly;
+    flex-flow:row-reverse;
+}

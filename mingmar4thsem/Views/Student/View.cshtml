@@ -1,0 +1,22 @@
+﻿@model List<mingmar4thsem.Models.tbl_student>
+
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>View</h2>
+<table>
+    <tr>
+        <th>SN</th>
+        <th>Name</th>
+    </tr>
+    @foreach(var data in Model)
+            {
+                <tr>
+                    <td>@data.id</td>
+                    <td>@data.name</td>
+                </tr>
+            }
+</table>
+

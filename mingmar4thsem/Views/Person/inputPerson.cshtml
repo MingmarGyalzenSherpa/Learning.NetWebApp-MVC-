@@ -3,9 +3,11 @@
 @{
     ViewBag.Title = "inputPerson";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    int sn = 0;
 }
 
-<h2>Enter person</h2>
+<link rel="stylesheet" href="~/Content/tableStyle.css" />
+<div class="containerInfo">
 <table class="tbl" border="1">
     <tr>
         <th>Sn</th>
@@ -17,7 +19,7 @@
     @foreach(var data in Model)
             {
                 <tr>
-                    <td>@data.id</td>
+                    <td>@(++sn)</td>
                     <td>@data.name</td>
                     <td>@data.address</td>
                     <td>@data.contact</td>
@@ -25,4 +27,20 @@
                 
             }
 </table>
-
+    <form>
+        <h3>Enter record</h3>
+        <label for="name">Name</label>
+        <br />
+        <input type="text" name="name" id="name" />
+        <br />
+        <label for="address">Address</label>
+        <br />
+        <input type="text" name="address" id="address" />
+        <br />
+        <label for="contact">Contact</label>
+        <br />
+        <input type="text" name="contact" id="contact" />
+        <br />
+        <button type="button" id="add">Add</button>  
+    </form>
+</div>

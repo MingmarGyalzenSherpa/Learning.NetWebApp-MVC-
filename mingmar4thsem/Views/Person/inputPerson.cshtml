@@ -6,8 +6,9 @@
     int sn = 0;
 }
 
+
 <link rel="stylesheet" href="~/Content/tableStyle.css" />
-<div class="containerInfo">
+<a href="@Url.Action("Create")">Add new records</a>
 <table class="tbl" border="1">
     <tr>
         <th>Sn</th>
@@ -27,20 +28,3 @@
                 
             }
 </table>
-    <form>
-        <h3>Enter record</h3>
-        <label for="name">Name</label>
-        <br />
-        <input type="text" name="name" id="name" />
-        <br />
-        <label for="address">Address</label>
-        <br />
-        <input type="text" name="address" id="address" />
-        <br />
-        <label for="contact">Contact</label>
-        <br />
-        <input type="text" name="contact" id="contact" />
-        <br />
-        <button type="button" id="add">Add</button>  
-    </form>
-</div>

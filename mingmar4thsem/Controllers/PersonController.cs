@@ -16,5 +16,17 @@ namespace mingmar4thsem.Controllers
             List<person> all_data = db.people.ToList();
             return View(all_data);
         }
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        public ActionResult SaveData(person person)
+        {
+            db.people.Add(person);
+            db.SaveChanges();
+            return RedirectToAction("inputPerson");
+        }
+
     }
 }

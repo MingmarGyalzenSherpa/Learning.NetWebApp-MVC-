@@ -16,5 +16,8 @@ namespace mingmar4thsem.Controllers
             List<tbl_student> all_data = db.tbl_student.ToList();
             return View("View",all_data);
         }
+
+     
+
     }
 }

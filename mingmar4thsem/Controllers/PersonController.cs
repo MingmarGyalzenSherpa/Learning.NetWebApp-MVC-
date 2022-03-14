@@ -28,5 +28,25 @@ namespace mingmar4thsem.Controllers
             return RedirectToAction("inputPerson");
         }
 
+        public ActionResult Edit(int id)
+        {
+            person person1 = db.people.Find(id);
+            return View(person1);
+        }
+
+        public ActionResult DeletePerson(int id)
+        {
+            person searched = db.people.Find(id);
+            db.people.Remove(searched);
+            db.SaveChanges();
+            return RedirectToAction("inputPerson");
+        }
+
+        public ActionResult UpdateData(person person)
+        {
+            db.Entry(person).State = System.Data.Entity.EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("inputPerson");
+        }
     }
 }

@@ -6,7 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="adab6293b7da47c79b102358a713c13e" Name="Diagram1">
         <EntityTypeShape EntityType="MingmaModel.person" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="MingmaModel.tbl_student" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MingmaModel.tbl_teacher" Width="1.5" PointX="2.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

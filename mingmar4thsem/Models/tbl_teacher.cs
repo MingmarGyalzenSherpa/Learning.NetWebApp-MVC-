@@ -12,9 +12,10 @@ namespace mingmar4thsem.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tbl_student
+    public partial class tbl_teacher
     {
         public int id { get; set; }
         public string name { get; set; }
+        public string subject { get; set; }
     }
 }

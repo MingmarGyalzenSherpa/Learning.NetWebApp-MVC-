@@ -26,6 +26,6 @@ namespace mingmar4thsem.Models
         }
     
         public virtual DbSet<person> people { get; set; }
-        public virtual DbSet<tbl_student> tbl_student { get; set; }
+        public virtual DbSet<tbl_teacher> tbl_teacher { get; set; }
     }
 }

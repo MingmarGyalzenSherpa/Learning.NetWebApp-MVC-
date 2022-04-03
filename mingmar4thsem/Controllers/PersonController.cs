@@ -48,5 +48,8 @@ namespace mingmar4thsem.Controllers
             db.SaveChanges();
             return RedirectToAction("inputPerson");
         }
+
+
+
     }
 }

@@ -11,9 +11,10 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="tbl_student">
-      <EntityTypeMapping TypeName="MingmaModel.tbl_student">
-        <MappingFragment StoreEntitySet="tbl_student">
+    <EntitySetMapping Name="tbl_teacher">
+      <EntityTypeMapping TypeName="MingmaModel.tbl_teacher">
+        <MappingFragment StoreEntitySet="tbl_teacher">
+          <ScalarProperty Name="subject" ColumnName="subject" />
           <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>

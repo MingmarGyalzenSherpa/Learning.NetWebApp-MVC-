@@ -1,0 +1,23 @@
+﻿@model mingmar4thsem.Models.employee_salary_details
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+@using (Html.BeginForm("SaveEdit", null))
+            {
+                <input type="hidden" name="id" value="@Model.id" />
+                <label> Employee Name</label>
+                <br />
+                @Html.DropDownList("empList", null, "Select", htmlAttributes: new { @Name = "employee_id" , @class = "form-control" });
+                <label>Salary Paid</label>
+                <br />
+                <input type="number" name="salary_paid" placeholder="@Model.salary_paid" />
+                <br />
+                <label>Paid Date</label>
+                <input type="date" name="paid_date" placeholder="@Model.paid_date" />
+                <br />
+                <br />
+                <input type="submit" value=" SAVE EDIT" />
+            }

@@ -7,6 +7,9 @@
       <Diagram DiagramId="adab6293b7da47c79b102358a713c13e" Name="Diagram1">
         <EntityTypeShape EntityType="MingmaModel.person" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="MingmaModel.tbl_teacher" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MingmaModel.employee_salary_details" Width="1.5" PointX="3" PointY="3.875" />
+        <EntityTypeShape EntityType="MingmaModel.tbl_employee" Width="1.5" PointX="0.75" PointY="3.875" />
+        <AssociationConnector Association="MingmaModel.FK_employee_salary_details_tbl_employee" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

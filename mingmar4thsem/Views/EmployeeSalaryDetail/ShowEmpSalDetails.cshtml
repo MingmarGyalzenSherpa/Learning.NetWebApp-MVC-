@@ -1,0 +1,78 @@
+﻿@model List<mingmar4thsem.Models.employee_salary_details>
+
+@{
+    ViewBag.Title = "ShowEmpSalDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<style>
+    table {
+        border-collapse: collapse;
+        border: 2px solid grey;
+    }
+
+    td, th {
+        border: 1px solid grey;
+        padding: 10px 20px;
+    }
+
+    h2 {
+        color: slategrey;
+    }
+</style>
+
+<h2>Salary Details</h2>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Employee Name</th>
+        <th>EMPLOYEE ID</th>
+        <th>SALARY PAID</th>
+        <th>PAID DATE</th>
+        <th colspan="2">Action</th>
+
+    </tr>
+    @foreach (var data in Model)
+    {
+        <tr>
+            <td>@(data.id)</td>
+            <td>@(data.tbl_employee.name)</td>
+            <td>@(data.employee_id)</td>
+            <td>@(data.salary_paid)</td>
+            <td>@(data.paid_date)</td>
+            <td><a href="@Url.Action("Edit",new {id = data.id})">Edit</a></td>
+            <td><a href="@Url.Action("Delete",new {id = data.id})">Delete</a></td>
+        </tr>
+    }
+</table>
+<br />
+<br />
+<br />
+@using (Html.BeginForm("Create", null,FormMethod.Post)) //null calls the action from same controller
+{
+
+    <label>Employee Name</label>
+    <br />
+    @*<select>
+        @foreach(var data in ViewBag.empList)
+                {
+                    <option>@(data.name)</option>
+                }
+    </select>*@
+    @Html.DropDownList("empList", null,"Select", htmlAttributes: new { @Name = "employee_id",@class="form-control"});
+    @*<input type="number" name="employee_id" />*@
+    <br />
+    <br />
+    <label>Salary Paid</label>
+    <br />
+    <input type="number" name="salary_paid" />
+    <br />
+    <br />
+    <label>Paid Date</label>
+    <br />
+    <input type="date" name="paid_date" />
+    <br />
+    <br />
+    <input type="submit" value="ADD" />
+}

@@ -45,6 +45,10 @@
             <td><a href="@Url.Action("Delete",new {id = data.id})">Delete</a></td>
         </tr>
     }
+    <tr>
+        <td> Total</td>
+        <td colspan="2">@(Model.Sum(x=>x.salary_paid))</td>
+    </tr>
 </table>
 <br />
 <br />

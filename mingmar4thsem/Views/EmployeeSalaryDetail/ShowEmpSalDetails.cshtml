@@ -22,7 +22,17 @@
     }
 </style>
 
-<h2>Salary Details</h2>
+@using (Html.BeginForm("Search", null))
+{
+   <label>Employee:</label>
+   @Html.DropDownList("empList",null ,"Select" ,htmlAttributes: new {@Name = "searchedID"})
+   <br />
+    <label>From:</label> <input type="date" name="beginDate" />
+    <label>To:</label> <input type="date" name="endDate" /> <input type="submit" value="SEARCH" />
+}
+    <h2>Salary Details</h2>
+
+
 <table>
     <tr>
         <th>ID</th>
@@ -53,18 +63,18 @@
 <br />
 <br />
 <br />
-@using (Html.BeginForm("Create", null,FormMethod.Post)) //null calls the action from same controller
+@using (Html.BeginForm("Create", null, FormMethod.Post)) //null calls the action from same controller
 {
 
     <label>Employee Name</label>
     <br />
     @*<select>
-        @foreach(var data in ViewBag.empList)
-                {
-                    <option>@(data.name)</option>
-                }
-    </select>*@
-    @Html.DropDownList("empList", null,"Select", htmlAttributes: new { @Name = "employee_id",@class="form-control"});
+            @foreach(var data in ViewBag.empList)
+                    {
+                        <option>@(data.name)</option>
+                    }
+        </select>*@
+    @Html.DropDownList("empList", null, "Select", htmlAttributes: new { @Name = "employee_id", @class = "form-control" });
     @*<input type="number" name="employee_id" />*@
     <br />
     <br />

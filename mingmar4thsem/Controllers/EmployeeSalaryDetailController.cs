@@ -11,14 +11,21 @@ namespace mingmar4thsem.Controllers
     {
         // GET: EmployeeSalaryDetail
 
+        public void SelectDropDown()
+        {
+            var empList = db.tbl_employee.ToList();
+            ViewBag.empList = new SelectList(empList, "id", "name");
+        }
+
         Entities db = new Entities();
         public ActionResult ShowEmpSalDetails()
         {
             List<employee_salary_details> all_data = db.employee_salary_details.ToList();
-            var empList = db.tbl_employee.ToList();
-            ViewBag.empList = new SelectList(empList, "id", "name");
+            SelectDropDown();
             return View(all_data);
         }
+
+        
 
         public ActionResult Edit(int id)
         {
@@ -52,5 +59,21 @@ namespace mingmar4thsem.Controllers
             return RedirectToAction("ShowEmpSalDetails");
 
         }
+
+        public ActionResult Search(DateTime? beginDate,DateTime? endDate,int? searchedID)
+        {
+            List<employee_salary_details> searchedData = new List<employee_salary_details>();
+            if (beginDate != null && endDate!=null)
+            {
+                searchedData = db.employee_salary_details.Where(x => beginDate <= x.paid_date && endDate>=x.paid_date).ToList();
+
+                searchedData = searchedData.Where(x => x.employee_id == searchedID).ToList();
+
+            }
+
+            SelectDropDown();
+            return View("ShowEmpSalDetails",searchedData);
+        }
+
     }
 }

@@ -63,13 +63,22 @@ namespace mingmar4thsem.Controllers
         public ActionResult Search(DateTime? beginDate,DateTime? endDate,int? searchedID)
         {
             List<employee_salary_details> searchedData = new List<employee_salary_details>();
-            if (beginDate != null && endDate!=null)
+            if(searchedID != null)
             {
-                searchedData = db.employee_salary_details.Where(x => beginDate <= x.paid_date && endDate>=x.paid_date).ToList();
+                searchedData = db.employee_salary_details.Where(x => x.employee_id == searchedID).ToList();
+                if (beginDate != null && endDate != null)
+                {
+                    searchedData = searchedData.Where(x => beginDate <= x.paid_date && endDate >= x.paid_date).ToList();
+                }
+            }
+            if (beginDate != null && endDate != null)
+            {
+                searchedData = db.employee_salary_details.Where(x => beginDate <= x.paid_date && endDate >= x.paid_date).ToList();
 
-                searchedData = searchedData.Where(x => x.employee_id == searchedID).ToList();
+
 
             }
+
 
             SelectDropDown();
             return View("ShowEmpSalDetails",searchedData);

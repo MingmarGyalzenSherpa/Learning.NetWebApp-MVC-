@@ -74,9 +74,6 @@ namespace mingmar4thsem.Controllers
             if (beginDate != null && endDate != null)
             {
                 searchedData = db.employee_salary_details.Where(x => beginDate <= x.paid_date && endDate >= x.paid_date).ToList();
-
-
-
             }
 
 
